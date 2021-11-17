@@ -1,6 +1,7 @@
 //Responsibe for bringing the actual list of meals to the screen
 
 import classes from "./AvailableMeals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_MEALS = [
   {
@@ -34,7 +35,9 @@ const AvailableMeals = () => {
 
   return (
     <section className={classes.meals}>
-      <ul>{mealslList}</ul>
+      <Card>
+        <ul>{mealslList}</ul>
+      </Card>
     </section>
   );
 };
