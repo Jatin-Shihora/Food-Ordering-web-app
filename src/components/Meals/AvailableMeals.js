@@ -1,6 +1,7 @@
 //Responsibe for bringing the actual list of meals to the screen
 
 import classes from "./AvailableMeals.module.css";
+import MealItem from "./MealItems/MealItem";
 import Card from "../UI/Card";
 
 const DUMMY_MEALS = [
@@ -31,7 +32,15 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
-  const mealslList = DUMMY_MEALS.map((meal) => <li>{meal.name}</li>);
+  const mealslList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      id={meal.id}
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+    />
+  ));
 
   return (
     <section className={classes.meals}>
